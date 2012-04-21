@@ -32,11 +32,13 @@ window.onload = function() {
   canvas.addAnimation(animation);
   
   var image3 = new aja.Image("infantry.png");
+  image3.x = 50;
+  image3.y = 400;
   var animation2 = new aja.SequentialAnimation([
-    new aja.PositionAnimation(image3, 50, 400, 400, 400, 2000),
-    new aja.PositionAnimation(image3, 400, 400, 400, 50, 2000),    
-    new aja.PositionAnimation(image3, 400, 50, 50, 50, 2000),
-    new aja.PositionAnimation(image3, 50, 50, 50, 400, 2000)
+    new aja.PositionDeltaAnimation(image3, 350, 0, 2000),
+    new aja.PositionDeltaAnimation(image3, 0, -350, 2000),    
+    new aja.PositionDeltaAnimation(image3, -350, 0, 2000),
+    new aja.PositionDeltaAnimation(image3, 0, 350, 2000)
   ]);
   
   animation2.loops = aja.Animation.Infinite;
