@@ -1,17 +1,8 @@
 window.onload = function() {
   var canvas = new aja.Canvas("canvas");
   canvas.verbosity = 3;
-  
-  
-  bgImage = new Image();
-  bgImage.src = "plains.png";
-  bgImage.onload = function() {
-    var bg = canvas.background.getContext("2d");
-    bg.drawImage(bgImage, 0, 0);
-    canvas.forceRedraw();
-  }
-  
-  
+  canvas.setBackgroundImage("plains.png");
+
   var image = new aja.Image("infantry.png");
   var image2 = new aja.Image("infantry.png");
   var animation = new aja.SequentialAnimation([
