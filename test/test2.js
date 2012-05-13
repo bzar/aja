@@ -17,4 +17,14 @@ window.onload = function() {
   window.setTimeout(function() {
     canvas.addAnimation(animation);
   }, 3000);
+  
+  window.setTimeout(function() {
+    image.visible = false;
+    canvas.redrawEntity(image);
+  }, 6000);
+  
+  window.setTimeout(function() {
+    image.visible = true;
+    canvas.redrawEntity(image);
+  }, 7000);
 }
