@@ -5,7 +5,12 @@ window.onload = function() {
 
   var image = new aja.Image("infantry.png");
 
-  var animation = new aja.PositionDeltaAnimation(image, 200, 0, 1000);
+  function moveDownAndRedraw() {
+    image.y += 50;
+    canvas.redrawEntity(image);
+  };
+  
+  var animation = new aja.PositionDeltaAnimation(image, 150, 0, 1000, moveDownAndRedraw);
   canvas.addEntity(image);
   canvas.addAnimation(animation);
   
