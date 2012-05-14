@@ -10,7 +10,7 @@ window.onload = function() {
     canvas.redrawEntity(image);
   };
   
-  var animation = new aja.PositionDeltaAnimation(image, 150, 0, 1000, moveDownAndRedraw);
+  var animation = new aja.PositionDeltaAnimation(image, 150, 0, 1000, aja.easing.Linear, moveDownAndRedraw);
   canvas.addEntity(image);
   canvas.addAnimation(animation);
   

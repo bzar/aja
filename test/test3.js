@@ -19,4 +19,35 @@ window.onload = function() {
   
   canvas.addEntity(image);
   canvas.addAnimation(animation);
+  
+  var quad = new aja.Image("infantry.png"); quad.x = 100; quad.y = 400;
+  var sine = new aja.Image("infantry.png"); sine.x = 200; sine.y = 400;
+  var expo = new aja.Image("infantry.png"); expo.x = 300; expo.y = 400;
+  
+  var quadAnimation = new aja.SequentialAnimation([
+    new aja.PropertyAnimation(quad, {y:{delta: -100}}, 500, aja.easing.QuadOut),
+    new aja.PropertyAnimation(quad, {y:{delta: 100}}, 500, aja.easing.QuadIn),
+  ]);
+  quadAnimation.loops = aja.Animation.Infinite;
+  
+  var sineAnimation = new aja.SequentialAnimation([
+    new aja.PropertyAnimation(sine, {y:{delta: -100}}, 500, aja.easing.SineOut),
+    new aja.PropertyAnimation(sine, {y:{delta: 100}}, 500, aja.easing.SineIn),
+  ]);
+  sineAnimation.loops = aja.Animation.Infinite;
+  
+  var expoAnimation = new aja.SequentialAnimation([
+    new aja.PropertyAnimation(expo, {y:{delta: -100}}, 500, aja.easing.ExpOut),
+    new aja.PropertyAnimation(expo, {y:{delta: 100}}, 500, aja.easing.ExpIn),
+  ]);
+  expoAnimation.loops = aja.Animation.Infinite;
+  
+  canvas.addEntity(quad);
+  canvas.addAnimation(quadAnimation);
+  
+  canvas.addEntity(sine);
+  canvas.addAnimation(sineAnimation);
+  
+  canvas.addEntity(expo);
+  canvas.addAnimation(expoAnimation);
 }
